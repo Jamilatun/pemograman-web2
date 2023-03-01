@@ -13,6 +13,7 @@
         <h2 style="margin-left:84px;">Belanja Online</h2>
     </div>
 <div class="container">
+    <div class="row">
     <div class="col-md-8">
         <form method="POST">
         <div class="form-group row">
@@ -80,6 +81,7 @@
             </tr>
         </table>
       </div>
+      </div>
   </div>
 </div>
     <?php 
@@ -115,5 +117,14 @@
         </table>
     </div>
     <?php } ?>
+    <footer class="bg-light" style="margin-top: 120px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="text-center" style=" text-align: center; padding-top: 10px">© Jamilatun</p>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
