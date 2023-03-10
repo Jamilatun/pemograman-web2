@@ -7,7 +7,7 @@ $program_studi =[
     "TI"=>"Teknik Informatika",
     "BD"=>"Bisnis Digital"
 ];
-$skill = [
+$skill_user = [
     "HTML"=>10,
     "CSS"=>10,
     "Javascript"=>20,

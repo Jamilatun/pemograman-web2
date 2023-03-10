@@ -69,7 +69,7 @@
                 <label class="col-4">Skill Programming</label> 
                 <div class="col-8">
 
-                    <?php foreach ($skill as $key => $value) { ?>
+                    <?php foreach ($skill_user as $key => $value) { ?>
                     <div class="custom-control custom-checkbox custom-control-inline">
                     <input name="skill[]" id="skill_<?= $key?>" type="checkbox" class="custom-control-input" value="<?= $key; ?>" > 
                     <label for="skill_<?= $key?>" class="custom-control-label"><?= $key; ?></label>
@@ -95,6 +95,8 @@
                     <th>domisili</th>
                     <th>program studi</th>
                     <th>skill programming</th>
+                    <th>skor</th>
+                    <th>predikat</th>
 
 
                 </tr>
@@ -107,6 +109,7 @@
                         $domisili = $_POST['domisili'];
                         $program_studi = $_POST['program_studi'];
                         $skill = $_POST['skill'];
+                        $skor = 0; 
                 ?>
                 <tr>
                     <td><?= $nim;?></td>
@@ -115,14 +118,35 @@
                     <td><?= $jenis_kelamin;?></td>
                     <td><?= $domisili;?></td>
                     <td><?= $program_studi;?></td>
-                    <td><?php foreach($skill as $skill) {echo $skill;};?></td>
+                    <td><?php 
+                    foreach($skill as $skill){
+                        foreach ($skill_user as $key => $value) {
+                            if ($skill == $key) {
+                                $skor += $value;
+                            }
+                        }
+                        echo $skill . "<br>";
+                        }?>
+                    </td>
+                    <td><?= $skor;?></td>
+                    <td><?php
+                    if($skor == 0){
+                        echo  "Tidak Memadai";
+                        }elseif($skor > 0 && $skor <= 40){
+                            echo  "Kurang";
+                        }elseif($skor > 40 && $skor <= 60){
+                            echo  "Cukup";
+                        }elseif($skor > 60 && $skor <= 100){
+                            echo  "Baik";
+                        }elseif($skor > 100) {
+                            echo  "Sangat Baik";
+                        }
 
-
-
-
+                ?></td>
+                 </td>
                 </tr>
-                <?php } ?>
-            </table>
+            <?php } ?>
+        </table>
     </div>
 </body>
 </html>
